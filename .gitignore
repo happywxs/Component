@@ -5,8 +5,12 @@
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
-.idea/
 .DS_Store
 /build
 /captures
 .externalNativeBuild
+/submodel/build
+
+.idea
+local.properties
+.idea/
