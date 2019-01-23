@@ -15,7 +15,7 @@ import android.os.Looper;
 
 import java.io.File;
 
-public interface IAppLilcationLike {
+public interface IAppLicationLike {
 
 
      void onCreate();

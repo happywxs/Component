@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.xuesong.a8500.basemodule.AppLicationLikeManager;
 import com.xuesong.a8500.basemodule.AppLicationLikePoxy;
-import com.xuesong.a8500.basemodule.IAppLilcationLike;
+import com.xuesong.a8500.basemodule.IAppLicationLike;
 
 public class SubAppLicationLike extends AppLicationLikePoxy {
 
@@ -17,7 +17,7 @@ public class SubAppLicationLike extends AppLicationLikePoxy {
     @Override
     public void onCreate() {
         super.onCreate();
-        IAppLilcationLike iAppLilcationLike= AppLicationLikeManager.getInstance().getAppLicationLike(AppLicationLikeManager.SUB_APPLICATION_LIKE);
+        IAppLicationLike iAppLilcationLike= AppLicationLikeManager.getInstance().getAppLicationLike(AppLicationLikeManager.SUB_APPLICATION_LIKE);
         String name=iAppLilcationLike.getResources().getString(R.string.app_name);
         Log.i("wang","==name==="+name);
         Log.i("wang", "===subLike==oncrete");

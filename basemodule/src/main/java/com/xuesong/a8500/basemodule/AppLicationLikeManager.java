@@ -12,7 +12,7 @@ public class AppLicationLikeManager {
 
     public static final String SUB_APPLICATION_LIKE = "com.xuesong.a8500.submodel.SubAppLicationLike";
     public static final String MAIN_APPLICATION_LIKE = "com.xuesong.a8500.basemodule.MainAppLicationLike";
-    HashMap<String, IAppLilcationLike> mlikeAppLike = new HashMap();
+    HashMap<String, IAppLicationLike> mlikeAppLike = new HashMap();
     public static AppLicationLikeManager appLicationLikeManager = null;
 
     private AppLicationLikeManager() {
@@ -32,7 +32,7 @@ public class AppLicationLikeManager {
             Class<?> cls = Class.forName(packageName);
             Constructor con = cls.getDeclaredConstructor(Application.class);
             con.setAccessible(true);
-            IAppLilcationLike iAppLilcationLike = (IAppLilcationLike) con.newInstance(context);
+            IAppLicationLike iAppLilcationLike = (IAppLicationLike) con.newInstance(context);
             regitLike(packageName, iAppLilcationLike);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -47,11 +47,11 @@ public class AppLicationLikeManager {
         }
     }
 
-    private void regitLike(String name, IAppLilcationLike iAppLilcationLike) {
+    private void regitLike(String name, IAppLicationLike iAppLilcationLike) {
         mlikeAppLike.put(name, iAppLilcationLike);
     }
 
-    public void unRegitLike(IAppLilcationLike iAppLilcationLike) {
+    public void unRegitLike(IAppLicationLike iAppLilcationLike) {
         mlikeAppLike.remove(iAppLilcationLike);
     }
 
@@ -59,13 +59,13 @@ public class AppLicationLikeManager {
         mlikeAppLike.clear();
     }
 
-    public IAppLilcationLike getAppLicationLike(String name) {
+    public IAppLicationLike getAppLicationLike(String name) {
         return mlikeAppLike.get(name);
     }
 
 
     public void attachBaseContext(Context base) {
-        for (HashMap.Entry<String, IAppLilcationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
+        for (HashMap.Entry<String, IAppLicationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
             appLilcationLikeEntry.getValue().attachBaseContext(base);
 
     }
@@ -73,25 +73,25 @@ public class AppLicationLikeManager {
 
     public void onCreate() {
         Log.i("wang", "====appProxy===" + mlikeAppLike.size());
-        for (HashMap.Entry<String, IAppLilcationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
+        for (HashMap.Entry<String, IAppLicationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
             appLilcationLikeEntry.getValue().onCreate();
     }
 
 
     public void onTerminate() {
-        for (HashMap.Entry<String, IAppLilcationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
+        for (HashMap.Entry<String, IAppLicationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
             appLilcationLikeEntry.getValue().onTerminate();
     }
 
 
     public void onLowMemory() {
-        for (HashMap.Entry<String, IAppLilcationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
+        for (HashMap.Entry<String, IAppLicationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
             appLilcationLikeEntry.getValue().onLowMemory();
     }
 
 
     public void onTrimMemory(int level) {
-        for (HashMap.Entry<String, IAppLilcationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
+        for (HashMap.Entry<String, IAppLicationLike> appLilcationLikeEntry : mlikeAppLike.entrySet())
             appLilcationLikeEntry.getValue().onTrimMemory(level);
     }
 

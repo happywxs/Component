@@ -1,4 +1,4 @@
-package com.xuesong.a8500.component;
+package com.xuesong.a8500.basemodule;
 
 import android.app.Application;
 import android.content.BroadcastReceiver;
@@ -13,8 +13,6 @@ import android.content.res.Resources;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-
-import com.xuesong.a8500.basemodule.AppLicationLikeManager;
 
 import java.io.File;
 
@@ -34,6 +32,11 @@ public class ComponentAppLication extends Application {
     @Override
     public void onCreate() {
         iAppLilcationLike.onCreate();
+       /* ServiceLoader<IAppLicationLike> serviceLoader=ServiceLoader.load(IAppLicationLike.class,IAppLicationLike.class.getClassLoader());
+        Iterator<IAppLicationLike> iterable=serviceLoader.iterator();
+        if(iterable.hasNext()){
+            iterable.next().onCreate();
+        }*/
         super.onCreate();
     }
 
@@ -53,7 +56,7 @@ public class ComponentAppLication extends Application {
 
     @Override
     public void onTrimMemory(int level) {
-        iAppLilcationLike.onTerminate();
+       iAppLilcationLike.onTerminate();
         super.onTrimMemory(level);
     }
 

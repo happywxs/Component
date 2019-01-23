@@ -16,11 +16,11 @@ import android.os.Looper;
 
 import java.io.File;
 
-public class AppLicationLikePoxy implements IAppLilcationLike {
+public class AppLicationLikePoxy implements IAppLicationLike {
     private Application application;
 
     protected AppLicationLikePoxy(Application application) {
-        this.application=application;
+        this.application = application;
     }
 
     @Override

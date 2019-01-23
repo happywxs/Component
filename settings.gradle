@@ -1,1 +1,1 @@
-include ':app', ':basemodule', ':submodel'
+include ':app', ':basemodule', ':submodel', ':mylibrary', ':usercentermodel'
